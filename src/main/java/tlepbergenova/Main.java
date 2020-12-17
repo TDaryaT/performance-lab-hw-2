@@ -1,11 +1,10 @@
 package tlepbergenova;
 
-//import ru.pflb.mq.dummy.implementation.SessionImpl;
-//import ru.pflb.mq.dummy.interfaces.Session;
+import tlepbergenova.dummyUtils.WorkWithDummy;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hi maven!");
-        //Session session = new SessionImpl();
+        WorkWithDummy.thread(new WorkWithDummy.OneTwoThreeProducer(), false);
     }
 }
