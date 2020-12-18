@@ -8,16 +8,21 @@ import java.util.List;
 
 public class ReadProducer implements DummyProducer {
 
+    /**
+     * inputStream with messages
+     */
     private InputStream inputStream;
 
+    /**
+     * isInfinity true, if we read the file infinitely
+     */
     private boolean isInfinity;
 
-    public ReadProducer(InputStream inputStream) {
-        this.inputStream = inputStream;
-        this.isInfinity = false;
-    }
-
     public ReadProducer() {
+        this.inputStream = ReadProducer
+                .class
+                .getClassLoader()
+                .getResourceAsStream("messages.dat");
         this.isInfinity = false;
     }
 
@@ -30,15 +35,14 @@ public class ReadProducer implements DummyProducer {
     }
 
     @Override
-    public void setMessages(Producer producer) {
+    public void setMessages(Producer producer, List<String> messages) {
         do {
-            DummyProducer.super.setMessages(producer);
+            DummyProducer.super.setMessages(producer, messages);
         } while (isInfinity);
     }
 
     @Override
     public List<String> getMessages() {
-
         return ListAddUtils.addLines(inputStream);
     }
 }

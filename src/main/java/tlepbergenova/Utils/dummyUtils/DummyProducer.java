@@ -12,11 +12,8 @@ import java.util.List;
 public interface DummyProducer extends Runnable {
     List<String> getMessages();
 
-    default void setMessages(Producer producer) {
+    default void setMessages(Producer producer, List<String> messages) {
         try {
-            // Create a messages
-            List<String> messages = getMessages();
-
             // Tell the producer to send the message
             for (String message : messages) {
                 producer.send(message);
@@ -43,7 +40,11 @@ public interface DummyProducer extends Runnable {
             // Create a MessageProducer from the Session to the Topic or Queue
             Producer producer = session.createProducer(destination);
 
-            setMessages(producer);
+            // Create a messages
+            List<String> messages = getMessages();
+
+            //Send a messages
+            setMessages(producer, messages);
 
             // Clean up
             session.close();
