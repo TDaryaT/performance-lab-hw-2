@@ -1,5 +1,7 @@
 package tlepbergenova.dummyUtils;
 
+import tlepbergenova.ListAddUtils;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,7 +27,7 @@ public class WorkWithDummy {
     public static class ReadProducer implements DummyProducer {
         @Override
         public List<String> getMessages() {
-            return null;
+            return ListAddUtils.addLines("resources/messages.dat");
         }
     }
 }
