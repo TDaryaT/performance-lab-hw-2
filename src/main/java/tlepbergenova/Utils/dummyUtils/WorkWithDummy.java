@@ -1,6 +1,4 @@
-package tlepbergenova.dummyUtils;
-
-import tlepbergenova.ListAddUtils;
+package tlepbergenova.Utils.dummyUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -21,13 +19,6 @@ public class WorkWithDummy {
             messages.add("ДВА");
             messages.add("ТРИ");
             return messages;
-        }
-    }
-
-    public static class ReadProducer implements DummyProducer {
-        @Override
-        public List<String> getMessages() {
-            return ListAddUtils.addLines("resources/messages.dat");
         }
     }
 }

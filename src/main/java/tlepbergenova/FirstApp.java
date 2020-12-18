@@ -1,10 +1,9 @@
 package tlepbergenova;
 
-import tlepbergenova.dummyUtils.WorkWithDummy;
+import tlepbergenova.Utils.dummyUtils.WorkWithDummy;
 
-public class Main {
+public class FirstApp {
     public static void main(String[] args) {
-        System.out.println("Hi maven!");
         WorkWithDummy.thread(new WorkWithDummy.OneTwoThreeProducer(), false);
     }
 }

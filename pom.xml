@@ -31,7 +31,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>tlepbergenova.Main</mainClass>
+                            <mainClass>tlepbergenova.FirstApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -41,7 +41,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>tlepbergenova.Main</mainClass>
+                            <mainClass>tlepbergenova.FirstApp</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
