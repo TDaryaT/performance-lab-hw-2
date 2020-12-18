@@ -3,23 +3,26 @@ package tlepbergenova.Utils.dummyUtils;
 import ru.pflb.mq.dummy.interfaces.Producer;
 import tlepbergenova.Utils.ListAddUtils;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class ReadProducer implements DummyProducer {
 
-    private String path;
+    private InputStream inputStream;
 
     private boolean isInfinity;
 
-    public ReadProducer() {
-        this.path = this.getClass()
-                .getResource("/messages.dat")
-                .getPath();
+    public ReadProducer(InputStream inputStream) {
+        this.inputStream = inputStream;
         this.isInfinity = false;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public ReadProducer() {
+        this.isInfinity = false;
+    }
+
+    public void setInputStream(InputStream inputStream) {
+        this.inputStream = inputStream;
     }
 
     public void setInfinity(boolean infinity) {
@@ -36,6 +39,6 @@ public class ReadProducer implements DummyProducer {
     @Override
     public List<String> getMessages() {
 
-        return ListAddUtils.addLines(path);
+        return ListAddUtils.addLines(inputStream);
     }
 }
