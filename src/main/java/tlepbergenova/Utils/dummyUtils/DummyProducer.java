@@ -9,7 +9,7 @@ import ru.pflb.mq.dummy.interfaces.Session;
 
 import java.util.List;
 
-interface DummyProducer extends Runnable {
+public interface DummyProducer extends Runnable {
     List<String> getMessages();
 
     default void setMessages(Producer producer) {
